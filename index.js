@@ -147,29 +147,32 @@ mainLoop = setInterval((canvasContext, canvas )=>{
 
   canvasContext.drawImage(corridaCar, positionCar.x, positionCar.y);
 
+
   cars.forEach(car =>{
     canvasContext.drawImage(corridaCar, car.x, car.y);
 
     if(car.y == positionCar.y)
-      if(car.x + 20 >  positionCar.x && car.x - 110 <  positionCar.x){
-        console.log("perdeu" + new Date())
+      if(car.x + 100 >  positionCar.x && car.x - 110 <  positionCar.x){
         clearInterval(mainLoop)
       }
 
   })
 
-  // canvasContext.moveTo(0,100);
-  // canvasContext.lineTo(width, 100);
+  canvasContext.moveTo(0,100);
+  canvasContext.lineTo(width, 100);
 
-  // canvasContext.moveTo(0,200);
-  // canvasContext.lineTo(width, 200);
+  canvasContext.moveTo(10,50);
+  canvasContext.lineTo(55, 50);
 
-  // canvasContext.moveTo(0,300);
-  // canvasContext.lineTo(width, 300);
-  // canvasContext.moveTo(0,400);
-  // canvasContext.lineTo(width, 400);
+  canvasContext.moveTo(0,200);
+  canvasContext.lineTo(width, 200);
 
-  // canvasContext.stroke();
+  canvasContext.moveTo(0,300);
+  canvasContext.lineTo(width, 300);
+  canvasContext.moveTo(0,400);
+  canvasContext.lineTo(width, 400);
+
+  canvasContext.stroke();
 
 
 },20,canvasContext,canvas, positionCar)

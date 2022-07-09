@@ -5,6 +5,35 @@
         <canvas id="myCanvas" width="1800" height="500" style="border:1px solid #000000;"></canvas>
         
     </div>
+    <style>
+        /* #myCanvas {
+            background-color:aqua;
+        } */
+
+
+        @keyframes color {
+            0%   { background: #33CCCC; }
+            20%  { background: #33CC36; }
+            40%  { background: #B8CC33; }
+            60%  { background: #FCCA00; }
+            80%  { background: #33CC36; }
+            100% { background: #33CCCC; }
+            }
+
+            #myCanvas {
+                background: #33CCCC; /* Fallback */
+                animation: color 9s infinite linear;
+                text-align: center;
+                /* padding: 2em; */
+
+            }
+            h1 {
+            text-align: center;
+            font-family: 'Kavoon', sans-serif;
+            font-size: 2.5em;
+            color: rgb(41, 38, 38);
+            }
+    </style>
     <button id="start" > START</button>
     <script src="./index.js"></script>
 </html>

@@ -1,3 +1,5 @@
+
+
 var canvas = document.getElementById("myCanvas");
 
 const  width = 1800;
@@ -33,12 +35,46 @@ document.addEventListener("keydown",(e)=>{
     CarBreak()
 })
 
-document.addEventListener("keyup",(e)=>{
+// document.addEventListener("keyup",(e)=>{
 
-  if(e.key == KEYBOARD_CODE.RIGHT)
-    carReduzindo()
+//   if(e.key == KEYBOARD_CODE.RIGHT)
+//     carReduzindo()
  
+// })
+
+
+document.getElementById("btn-sobe").addEventListener("click",()=>{
+  carUp()
 })
+document.getElementById("btn-desce").addEventListener("click",()=>{
+  carDown()
+})
+
+var intervalLoopAcelera = null;
+document.getElementById("btn-acelera").addEventListener("mousedown",()=>{
+
+  if(intervalLoopAcelera != null)
+    clearInterval(intervalLoopAcelera)
+
+  intervalLoopAcelera = setInterval(()=>{
+    CarRun()
+  },50)  
+  document.getElementById("btn-acelera").addEventListener("mouseup",()=>{
+    clearInterval(intervalLoopAcelera)
+    console.log("MOUSE OUT")
+  })
+  carReduzindo()  
+
+})
+
+
+
+document.getElementById("btn-freia").addEventListener("drag",()=>{
+  CarBreak()
+
+})
+
+
 
 var intervalCarBreak = [];
 
@@ -111,6 +147,8 @@ var canvasContext = canvas.getContext("2d");
 
 var corridaCar = new Image();
 corridaCar.src = "./fiat.png"
+// var corridaCar = new Image();
+// corridaCar.src = "./criado.png"
 
 
 
@@ -183,7 +221,7 @@ document.getElementById("start").addEventListener("click",()=>{
     gameStart()
 
   document.getElementById("start").disabled = !gameIstarted
- 
+  
   gameIstarted = true;  
 
 })

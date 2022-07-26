@@ -4,7 +4,7 @@ var canvas = document.getElementById("myCanvas");
 
 const  width = 1800;
 const height = 500;
-
+var pontuacao = 0;
 
 const KEYBOARD_CODE = {
   UP : "ArrowUp",
@@ -35,12 +35,12 @@ document.addEventListener("keydown",(e)=>{
     CarBreak()
 })
 
-// document.addEventListener("keyup",(e)=>{
+document.addEventListener("keyup",(e)=>{
 
-//   if(e.key == KEYBOARD_CODE.RIGHT)
-//     carReduzindo()
+  if(e.key == KEYBOARD_CODE.RIGHT)
+    carReduzindo()
  
-// })
+})
 
 
 document.getElementById("btn-sobe").addEventListener("click",()=>{
@@ -199,8 +199,7 @@ mainLoop = setInterval((canvasContext, canvas )=>{
   canvasContext.moveTo(0,100);
   canvasContext.lineTo(width, 100);
 
-  canvasContext.moveTo(10,50);
-  canvasContext.lineTo(55, 50);
+  
 
   canvasContext.moveTo(0,200);
   canvasContext.lineTo(width, 200);
@@ -212,7 +211,8 @@ mainLoop = setInterval((canvasContext, canvas )=>{
 
   canvasContext.stroke();
 
-
+  pontuacao += 18
+  document.getElementById("pontuacao").innerText = pontuacao
 },20,canvasContext,canvas, positionCar)
 
 // var gameIstarted = false;

@@ -215,15 +215,15 @@ mainLoop = setInterval((canvasContext, canvas )=>{
 
 },20,canvasContext,canvas, positionCar)
 
-var gameIstarted = false;
-document.getElementById("start").addEventListener("click",()=>{
-  if(gameIstarted == false)
-    gameStart()
+// var gameIstarted = false;
+// document.getElementById("start").addEventListener("click",()=>{
+//   if(gameIstarted == false)
+//     gameStart()
 
-  document.getElementById("start").disabled = !gameIstarted
+//   document.getElementById("start").disabled = !gameIstarted
   
-  gameIstarted = true;  
+//   gameIstarted = true;  
 
-})
+// })
 
 
